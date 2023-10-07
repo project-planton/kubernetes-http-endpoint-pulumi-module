@@ -13,14 +13,14 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-type ResourceBlueprint struct {
+type ResourceStack struct {
 	WorkspaceDir     string
 	Input            *cepv1containerstack.CustomEndpointKubernetesStackInput
 	AwsLabels        map[string]string
 	KubernetesLabels map[string]string
 }
 
-func (s *ResourceBlueprint) Resources(ctx *pulumi.Context) error {
+func (s *ResourceStack) Resources(ctx *pulumi.Context) error {
 	clusterIssuerName := GetClusterIssuerName(s.Input.ResourceInput.CustomEndpoint.Metadata.Name)
 	kubernetesProvider, err := pulumikubernetesprovider.GetWithStackCredentials(ctx, s.Input.CredentialsInput.Kubernetes)
 	if err != nil {
