@@ -1,12 +1,12 @@
 package kubernetes
 
 import (
-	cepv1containerstack "buf.build/gen/go/plantoncloud/planton-cloud-apis/protocolbuffers/go/cloud/planton/apis/v1/code2cloud/deploy/endpoint/custom/stack/kubernetes"
-	"buf.build/gen/go/plantoncloud/planton-cloud-apis/protocolbuffers/go/cloud/planton/apis/v1/stack/rpc/enums"
 	"context"
 	"github.com/pkg/errors"
 	"github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk/pkg/org"
 	"github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk/pkg/stack/output/backend"
+	cepv1containerstack "github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/v1/code2cloud/deploy/endpoint/custom/stack/kubernetes"
+	"github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/v1/stack/rpc/enums"
 )
 
 func Outputs(ctx context.Context, input *cepv1containerstack.CustomEndpointKubernetesStackInput) (

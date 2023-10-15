@@ -1,7 +1,6 @@
 package kubernetes
 
 import (
-	cepv1containerstack "buf.build/gen/go/plantoncloud/planton-cloud-apis/protocolbuffers/go/cloud/planton/apis/v1/code2cloud/deploy/endpoint/custom/stack/kubernetes"
 	"github.com/pkg/errors"
 	"github.com/plantoncloud-inc/custom-endpoint-pulumi-blueprint/pkg/kubernetes/cert"
 	"github.com/plantoncloud-inc/custom-endpoint-pulumi-blueprint/pkg/kubernetes/clusterissuer"
@@ -9,6 +8,7 @@ import (
 	"github.com/plantoncloud-inc/custom-endpoint-pulumi-blueprint/pkg/kubernetes/virtualservice"
 	"github.com/plantoncloud-inc/go-commons/network/dns/zone"
 	pulumikubernetesprovider "github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk/pkg/automation/provider/kubernetes"
+	cepv1containerstack "github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/v1/code2cloud/deploy/endpoint/custom/stack/kubernetes"
 	pulumikubernetes "github.com/pulumi/pulumi-kubernetes/sdk/v3/go/kubernetes"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
