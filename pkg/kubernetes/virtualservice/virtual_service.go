@@ -8,7 +8,7 @@ import (
 	"github.com/plantoncloud-inc/go-commons/kubernetes/manifest"
 	"github.com/plantoncloud-inc/go-commons/network/dns/zone"
 	ingressnamespace "github.com/plantoncloud-inc/kube-cluster-pulumi-blueprint/pkg/gcp/container/addon/istio/ingress/namespace"
-	"github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/v1/code2cloud/deploy/endpoint/custom/state"
+	cepv1 "github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/v1/code2cloud/deploy/endpoint/custom"
 	pulumikubernetes "github.com/pulumi/pulumi-kubernetes/sdk/v3/go/kubernetes"
 	pulumik8syaml "github.com/pulumi/pulumi-kubernetes/sdk/v3/go/kubernetes/yaml"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
@@ -26,7 +26,7 @@ type Input struct {
 	EndpointDomainName   string
 	BackendEnvironmentId string
 	IsGrpcWebCompatible  bool
-	Routes               []*state.CustomEndpointRouteState
+	Routes               []*cepv1.CustomEndpointRoute
 }
 
 func Resources(ctx *pulumi.Context, input *Input) error {

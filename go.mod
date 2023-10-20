@@ -49,13 +49,14 @@ require (
 
 require (
 	github.com/golang/protobuf v1.5.3
-	github.com/plantoncloud-inc/go-commons v0.0.405
-	github.com/plantoncloud-inc/kube-cluster-pulumi-blueprint v0.0.0-20231015052940-812f7edd3f38
-	github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk v0.0.3
-	github.com/plantoncloud/planton-cloud-apis v0.0.2
+	github.com/plantoncloud-inc/go-commons v0.0.407
+	github.com/plantoncloud-inc/kube-cluster-pulumi-blueprint v0.0.0-20231020085418-ffd6c4e4eace
+	github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk v0.0.5
+	github.com/plantoncloud/planton-cloud-apis v0.0.8
 )
 
 require (
+	buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go v1.31.0-20231017183020-0de7443d03cf.1 // indirect
 	cloud.google.com/go v0.110.4 // indirect
 	cloud.google.com/go/compute v1.20.1 // indirect
 	cloud.google.com/go/compute/metadata v0.2.3 // indirect
