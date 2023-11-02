@@ -1,6 +1,8 @@
 module github.com/plantoncloud-inc/custom-endpoint-pulumi-blueprint
 
-go 1.20
+go 1.21
+
+toolchain go1.21.3
 
 //these replacements are required in order to use external-secrets apis https://github.com/external-secrets/external-secrets/blob/main/go.mod
 replace (
@@ -49,10 +51,10 @@ require (
 
 require (
 	github.com/golang/protobuf v1.5.3
-	github.com/plantoncloud-inc/go-commons v0.0.407
-	github.com/plantoncloud-inc/kube-cluster-pulumi-blueprint v0.0.0-20231020085418-ffd6c4e4eace
-	github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk v0.0.5
-	github.com/plantoncloud/planton-cloud-apis v0.0.8
+	github.com/plantoncloud-inc/go-commons v0.0.412
+	github.com/plantoncloud-inc/kube-cluster-pulumi-blueprint v0.0.0-20231102082139-59dc85442d52
+	github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk v0.0.8
+	github.com/plantoncloud/planton-cloud-apis v0.0.15
 )
 
 require (
