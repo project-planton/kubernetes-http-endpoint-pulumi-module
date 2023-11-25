@@ -2,6 +2,7 @@ package kubernetes
 
 import (
 	"context"
+
 	"github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/v1/stack/job/enums/operationtype"
 
 	"github.com/pkg/errors"
@@ -24,7 +25,7 @@ func Outputs(ctx context.Context, input *cepv1containerstack.CustomEndpointKuber
 }
 
 func Get(stackOutput map[string]interface{}, input *cepv1containerstack.CustomEndpointKubernetesStackInput) *cepv1containerstack.CustomEndpointKubernetesStackOutputs {
-	if input.StackJob.OperationType != operationtype.StackJobOperationType_apply || stackOutput == nil {
+	if input.StackJob.Spec.OperationType != operationtype.StackJobOperationType_apply || stackOutput == nil {
 		return &cepv1containerstack.CustomEndpointKubernetesStackOutputs{}
 	}
 	return &cepv1containerstack.CustomEndpointKubernetesStackOutputs{}
