@@ -38,7 +38,7 @@ replace (
 require (
 	github.com/cert-manager/cert-manager v1.10.0
 	github.com/pkg/errors v0.9.1
-	github.com/pulumi/pulumi-kubernetes/sdk/v4 v4.5.3
+	github.com/pulumi/pulumi-kubernetes/sdk/v4 v4.7.1
 	github.com/pulumi/pulumi/sdk/v3 v3.104.2
 	github.com/sirupsen/logrus v1.9.3 // indirect
 	google.golang.org/grpc v1.59.0 // indirect
@@ -52,9 +52,9 @@ require (
 require (
 	github.com/golang/protobuf v1.5.3
 	github.com/plantoncloud-inc/go-commons v0.0.421
-	github.com/plantoncloud-inc/kube-cluster-pulumi-blueprint v0.0.0-20240205012716-82119bc306cd
-	github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk v0.0.20
-	github.com/plantoncloud/planton-cloud-apis v0.0.73
+	github.com/plantoncloud-inc/kube-cluster-pulumi-blueprint v0.0.0-20240207025104-48638a676f71
+	github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk v0.0.21
+	github.com/plantoncloud/planton-cloud-apis v0.0.77
 )
 
 require (
