@@ -52,9 +52,9 @@ require (
 require (
 	github.com/golang/protobuf v1.5.3
 	github.com/plantoncloud-inc/go-commons v0.0.421
-	github.com/plantoncloud-inc/kube-cluster-pulumi-blueprint v0.0.0-20240207025104-48638a676f71
-	github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk v0.0.21
-	github.com/plantoncloud/planton-cloud-apis v0.0.77
+	github.com/plantoncloud-inc/kube-cluster-pulumi-blueprint v0.0.0-20240209004448-9eed3e4d62c2
+	github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk v0.0.23
+	github.com/plantoncloud/planton-cloud-apis v0.0.81
 )
 
 require (
