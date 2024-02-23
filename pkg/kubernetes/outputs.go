@@ -20,10 +20,10 @@ func Outputs(ctx context.Context, input *code2cloudv1deploycepstackk8smodel.Cust
 	if err != nil {
 		return nil, errors.Wrap(err, "failed to get stack output")
 	}
-	return Get(stackOutput, input), nil
+	return OutputMapTransformer(stackOutput, input), nil
 }
 
-func Get(stackOutput map[string]interface{}, input *code2cloudv1deploycepstackk8smodel.CustomEndpointKubernetesStackInput) *code2cloudv1deploycepstackk8smodel.CustomEndpointKubernetesStackOutputs {
+func OutputMapTransformer(stackOutput map[string]interface{}, input *code2cloudv1deploycepstackk8smodel.CustomEndpointKubernetesStackInput) *code2cloudv1deploycepstackk8smodel.CustomEndpointKubernetesStackOutputs {
 	if input.StackJob.Spec.OperationType != stackjoboperationtype.StackJobOperationType_apply || stackOutput == nil {
 		return &code2cloudv1deploycepstackk8smodel.CustomEndpointKubernetesStackOutputs{}
 	}
