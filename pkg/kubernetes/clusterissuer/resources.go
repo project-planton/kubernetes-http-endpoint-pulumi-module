@@ -2,17 +2,18 @@ package clusterissuer
 
 import (
 	"fmt"
+	"path/filepath"
+
 	v12 "github.com/cert-manager/cert-manager/pkg/apis/acme/v1"
 	v1 "github.com/cert-manager/cert-manager/pkg/apis/certmanager/v1"
 	v14 "github.com/cert-manager/cert-manager/pkg/apis/meta/v1"
 	"github.com/pkg/errors"
 	"github.com/plantoncloud-inc/go-commons/kubernetes/manifest"
-	"github.com/plantoncloud-inc/kube-cluster-pulumi-blueprint/pkg/common/letsencrypt"
+	"github.com/plantoncloud/kube-cluster-pulumi-blueprint/pkg/common/letsencrypt"
 	pulumikubernetes "github.com/pulumi/pulumi-kubernetes/sdk/v4/go/kubernetes"
 	pulumik8syaml "github.com/pulumi/pulumi-kubernetes/sdk/v4/go/kubernetes/yaml"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 	k8sapimachineryv1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"path/filepath"
 )
 
 const (

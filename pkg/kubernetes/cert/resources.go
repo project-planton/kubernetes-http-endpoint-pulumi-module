@@ -2,17 +2,18 @@ package cert
 
 import (
 	"fmt"
+	"path/filepath"
+
 	v1 "github.com/cert-manager/cert-manager/pkg/apis/certmanager/v1"
 	cmmeta "github.com/cert-manager/cert-manager/pkg/apis/meta/v1"
 	"github.com/pkg/errors"
 	"github.com/plantoncloud-inc/go-commons/kubernetes/manifest"
 	commonsdnszone "github.com/plantoncloud-inc/go-commons/network/dns/zone"
-	ingressnamespace "github.com/plantoncloud-inc/kube-cluster-pulumi-blueprint/pkg/gcp/container/addon/istio/ingress/namespace"
+	ingressnamespace "github.com/plantoncloud/kube-cluster-pulumi-blueprint/pkg/gcp/container/addon/istio/ingress/namespace"
 	pulumikubernetes "github.com/pulumi/pulumi-kubernetes/sdk/v4/go/kubernetes"
 	pulumik8syaml "github.com/pulumi/pulumi-kubernetes/sdk/v4/go/kubernetes/yaml"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 	k8sapimachineryv1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"path/filepath"
 )
 
 const (

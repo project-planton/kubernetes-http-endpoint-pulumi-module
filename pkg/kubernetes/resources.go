@@ -2,13 +2,13 @@ package kubernetes
 
 import (
 	"github.com/pkg/errors"
-	"github.com/plantoncloud-inc/custom-endpoint-pulumi-blueprint/pkg/kubernetes/cert"
-	"github.com/plantoncloud-inc/custom-endpoint-pulumi-blueprint/pkg/kubernetes/clusterissuer"
-	"github.com/plantoncloud-inc/custom-endpoint-pulumi-blueprint/pkg/kubernetes/gateway"
-	"github.com/plantoncloud-inc/custom-endpoint-pulumi-blueprint/pkg/kubernetes/virtualservice"
 	"github.com/plantoncloud-inc/go-commons/network/dns/zone"
-	pulumikubernetesprovider "github.com/plantoncloud-inc/pulumi-stack-runner-go-sdk/pkg/automation/provider/kubernetes"
+	"github.com/plantoncloud/custom-endpoint-pulumi-blueprint/pkg/kubernetes/cert"
+	"github.com/plantoncloud/custom-endpoint-pulumi-blueprint/pkg/kubernetes/clusterissuer"
+	"github.com/plantoncloud/custom-endpoint-pulumi-blueprint/pkg/kubernetes/gateway"
+	"github.com/plantoncloud/custom-endpoint-pulumi-blueprint/pkg/kubernetes/virtualservice"
 	code2cloudv1deploycepstackk8smodel "github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/code2cloud/v1/customendpoint/stack/kubernetes/model"
+	pulumikubernetesprovider "github.com/plantoncloud/pulumi-stack-runner-go-sdk/pkg/automation/provider/kubernetes"
 	pulumikubernetes "github.com/pulumi/pulumi-kubernetes/sdk/v4/go/kubernetes"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
