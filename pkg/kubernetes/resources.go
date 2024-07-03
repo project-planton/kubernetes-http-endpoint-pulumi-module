@@ -8,7 +8,7 @@ import (
 	"github.com/plantoncloud/custom-endpoint-pulumi-blueprint/pkg/kubernetes/gateway"
 	"github.com/plantoncloud/custom-endpoint-pulumi-blueprint/pkg/kubernetes/virtualservice"
 	code2cloudv1deploycepstackk8smodel "github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/code2cloud/v1/customendpoint/stack/kubernetes/model"
-	pulumikubernetesprovider "github.com/plantoncloud/pulumi-stack-runner-go-sdk/pkg/automation/provider/kubernetes"
+	"github.com/plantoncloud/pulumi-blueprint-golang-commons/pkg/kubernetes/pulumikubernetesprovider"
 	pulumikubernetes "github.com/pulumi/pulumi-kubernetes/sdk/v4/go/kubernetes"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
