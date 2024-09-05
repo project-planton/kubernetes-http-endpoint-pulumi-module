@@ -1,6 +1,6 @@
 module github.com/plantoncloud/kubernetes-http-endpoint-pulumi-module
 
-go 1.22.6
+go 1.23
 
 toolchain go1.23.0
 
@@ -10,12 +10,12 @@ replace github.com/plantoncloud/planton-cloud-apis => ../planton-cloud-apis
 
 require (
 	github.com/pkg/errors v0.9.1
-	github.com/plantoncloud/kubernetes-crd-pulumi-types v0.0.0-20240811054507-35b7232001a0
-	github.com/plantoncloud/planton-cloud-apis v0.1.32
+	github.com/plantoncloud/kubernetes-crd-pulumi-types v0.0.0-20240903231550-b86827cb2eb9
+	github.com/plantoncloud/planton-cloud-apis v0.1.43
 	github.com/plantoncloud/pulumi-module-golang-commons v0.0.0-20240813091317-49da3b41a14f
-	github.com/plantoncloud/stack-job-runner-golang-sdk v0.0.57
+	github.com/plantoncloud/stack-job-runner-golang-sdk v0.0.58
 	github.com/pulumi/pulumi-kubernetes/sdk/v4 v4.15.0
-	github.com/pulumi/pulumi/sdk/v3 v3.129.0
+	github.com/pulumi/pulumi/sdk/v3 v3.130.0
 )
 
 require (
