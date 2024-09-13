@@ -14,7 +14,7 @@ type Locals struct {
 	EndpointDomainName     string
 	IngressCertSecretName  string
 	KubernetesHttpEndpoint *kuberneteshttpendpoint.KubernetesHttpEndpoint
-	KubernetesLabels       map[string]string
+	Labels                 map[string]string
 }
 
 func initializeLocals(ctx *pulumi.Context, stackInput *kuberneteshttpendpoint.KubernetesHttpEndpointStackInput) *Locals {
@@ -23,12 +23,12 @@ func initializeLocals(ctx *pulumi.Context, stackInput *kuberneteshttpendpoint.Ku
 	//assign value for the locals variable to make it available across the project
 	locals.KubernetesHttpEndpoint = stackInput.ApiResource
 
-	locals.KubernetesLabels = map[string]string{
+	locals.Labels = map[string]string{
+		kuberneteslabelkeys.Environment:  stackInput.ApiResource.Spec.EnvironmentInfo.EnvId,
+		kuberneteslabelkeys.Organization: stackInput.ApiResource.Spec.EnvironmentInfo.OrgId,
 		kuberneteslabelkeys.Resource:     strconv.FormatBool(true),
-		kuberneteslabelkeys.Organization: locals.KubernetesHttpEndpoint.Spec.EnvironmentInfo.OrgId,
-		kuberneteslabelkeys.Environment:  locals.KubernetesHttpEndpoint.Spec.EnvironmentInfo.EnvId,
-		kuberneteslabelkeys.ResourceKind: apiresourcekind.ApiResourceKind_kafka_kubernetes.String(),
-		kuberneteslabelkeys.ResourceId:   locals.KubernetesHttpEndpoint.Metadata.Id,
+		kuberneteslabelkeys.ResourceId:   stackInput.ApiResource.Metadata.Id,
+		kuberneteslabelkeys.ResourceKind: apiresourcekind.ApiResourceKind_kubernetes_http_endpoint.String(),
 	}
 
 	locals.EndpointDomainName = locals.KubernetesHttpEndpoint.Metadata.Name

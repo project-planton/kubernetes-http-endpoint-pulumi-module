@@ -10,16 +10,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-type ResourceStack struct {
-	StackInput *kuberneteshttpendpoint.KubernetesHttpEndpointStackInput
-}
-
-func (s *ResourceStack) Resources(ctx *pulumi.Context) error {
-	locals := initializeLocals(ctx, s.StackInput)
+func Resources(ctx *pulumi.Context, stackInput *kuberneteshttpendpoint.KubernetesHttpEndpointStackInput) error {
+	locals := initializeLocals(ctx, stackInput)
 
 	//create kubernetes-provider from the credential in the stack-input
 	kubernetesProvider, err := pulumikubernetesprovider.GetWithKubernetesClusterCredential(ctx,
-		s.StackInput.KubernetesClusterCredential, "kubernetes")
+		stackInput.KubernetesClusterCredential, "kubernetes")
 	if err != nil {
 		return errors.Wrap(err, "failed to create kubernetes provider")
 	}
@@ -46,7 +42,7 @@ func (s *ResourceStack) Resources(ctx *pulumi.Context) error {
 				Metadata: metav1.ObjectMetaArgs{
 					Name:      pulumi.String(locals.KubernetesHttpEndpoint.Metadata.Id),
 					Namespace: pulumi.String(vars.IstioIngressNamespace),
-					Labels:    pulumi.ToStringMap(locals.KubernetesLabels),
+					Labels:    pulumi.ToStringMap(locals.Labels),
 				},
 				Spec: certmanagerv1.CertificateSpecArgs{
 					DnsNames:   pulumi.ToStringArray([]string{locals.KubernetesHttpEndpoint.Metadata.Name}),
@@ -90,7 +86,7 @@ func (s *ResourceStack) Resources(ctx *pulumi.Context) error {
 				Name: pulumi.String(locals.KubernetesHttpEndpoint.Metadata.Id),
 				// All gateway resources should be created in the ingress deployment namespace
 				Namespace: pulumi.String(vars.IstioIngressNamespace),
-				Labels:    pulumi.ToStringMap(locals.KubernetesLabels),
+				Labels:    pulumi.ToStringMap(locals.Labels),
 			},
 			Spec: gatewayv1.GatewaySpecArgs{
 				GatewayClassName: pulumi.String(vars.GatewayIngressClassName),
@@ -115,7 +111,7 @@ func (s *ResourceStack) Resources(ctx *pulumi.Context) error {
 				Metadata: metav1.ObjectMetaArgs{
 					Name:      pulumi.String("http-external-redirect"),
 					Namespace: pulumi.String(vars.IstioIngressNamespace),
-					Labels:    pulumi.ToStringMap(locals.KubernetesLabels),
+					Labels:    pulumi.ToStringMap(locals.Labels),
 				},
 				Spec: gatewayv1.HTTPRouteSpecArgs{
 					Hostnames: pulumi.StringArray{pulumi.String(locals.EndpointDomainName)},
@@ -175,7 +171,7 @@ func (s *ResourceStack) Resources(ctx *pulumi.Context) error {
 			Metadata: metav1.ObjectMetaArgs{
 				Name:      pulumi.String(locals.KubernetesHttpEndpoint.Metadata.Id),
 				Namespace: pulumi.String(vars.IstioIngressNamespace),
-				Labels:    pulumi.ToStringMap(locals.KubernetesLabels),
+				Labels:    pulumi.ToStringMap(locals.Labels),
 			},
 			Spec: gatewayv1.HTTPRouteSpecArgs{
 				Hostnames: pulumi.StringArray{pulumi.String(locals.EndpointDomainName)},
