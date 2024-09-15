@@ -1,4 +1,4 @@
-package argocd_kubernetes_pulumi_modulepackage
+package main
 
 import (
 	"github.com/pkg/errors"
