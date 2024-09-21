@@ -20,6 +20,6 @@ build: clean deps vet fmt
 
 .PHONY: update-deps
 update-deps:
-	go get github.com/plantoncloud/planton-cloud-apis@latest
+	go get github.com/plantoncloud/planton@latest
 	go get github.com/plantoncloud/pulumi-module-golang-commons
 	go get github.com/plantoncloud/kubernetes-crd-pulumi-types
