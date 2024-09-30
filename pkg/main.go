@@ -1,16 +1,16 @@
 package pkg
 
 import (
+	kuberneteshttpendpointv1 "buf.build/gen/go/plantoncloud/project-planton/protocolbuffers/go/project/planton/apis/provider/kubernetes/kuberneteshttpendpoint/v1"
 	"github.com/pkg/errors"
 	certmanagerv1 "github.com/plantoncloud/kubernetes-crd-pulumi-types/pkg/certmanager/certmanager/v1"
 	gatewayv1 "github.com/plantoncloud/kubernetes-crd-pulumi-types/pkg/gatewayapis/gateway/v1"
-	"github.com/plantoncloud/project-planton/apis/zzgo/cloud/planton/apis/code2cloud/v1/kubernetes/kuberneteshttpendpoint"
 	"github.com/plantoncloud/pulumi-module-golang-commons/pkg/provider/kubernetes/pulumikubernetesprovider"
 	metav1 "github.com/pulumi/pulumi-kubernetes/sdk/v4/go/kubernetes/meta/v1"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-func Resources(ctx *pulumi.Context, stackInput *kuberneteshttpendpoint.KubernetesHttpEndpointStackInput) error {
+func Resources(ctx *pulumi.Context, stackInput *kuberneteshttpendpointv1.KubernetesHttpEndpointStackInput) error {
 	locals := initializeLocals(ctx, stackInput)
 
 	//create kubernetes-provider from the credential in the stack-input

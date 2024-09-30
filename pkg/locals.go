@@ -1,10 +1,9 @@
 package pkg
 
 import (
+	kuberneteshttpendpointv1 "buf.build/gen/go/plantoncloud/project-planton/protocolbuffers/go/project/planton/apis/provider/kubernetes/kuberneteshttpendpoint/v1"
 	"fmt"
 	"github.com/plantoncloud/kubernetes-http-endpoint-pulumi-module/pkg/outputs"
-	"github.com/plantoncloud/project-planton/apis/zzgo/cloud/planton/apis/code2cloud/v1/kubernetes/kuberneteshttpendpoint"
-	"github.com/plantoncloud/project-planton/apis/zzgo/cloud/planton/apis/commons/apiresource/enums/apiresourcekind"
 	"github.com/plantoncloud/pulumi-module-golang-commons/pkg/provider/kubernetes/kuberneteslabelkeys"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 	"strconv"
@@ -13,11 +12,11 @@ import (
 type Locals struct {
 	EndpointDomainName     string
 	IngressCertSecretName  string
-	KubernetesHttpEndpoint *kuberneteshttpendpoint.KubernetesHttpEndpoint
+	KubernetesHttpEndpoint *kuberneteshttpendpointv1.KubernetesHttpEndpoint
 	Labels                 map[string]string
 }
 
-func initializeLocals(ctx *pulumi.Context, stackInput *kuberneteshttpendpoint.KubernetesHttpEndpointStackInput) *Locals {
+func initializeLocals(ctx *pulumi.Context, stackInput *kuberneteshttpendpointv1.KubernetesHttpEndpointStackInput) *Locals {
 	locals := &Locals{}
 
 	//assign value for the locals variable to make it available across the project
@@ -28,7 +27,7 @@ func initializeLocals(ctx *pulumi.Context, stackInput *kuberneteshttpendpoint.Ku
 		kuberneteslabelkeys.Organization: stackInput.Target.Spec.EnvironmentInfo.OrgId,
 		kuberneteslabelkeys.Resource:     strconv.FormatBool(true),
 		kuberneteslabelkeys.ResourceId:   stackInput.Target.Metadata.Id,
-		kuberneteslabelkeys.ResourceKind: apiresourcekind.ApiResourceKind_kubernetes_http_endpoint.String(),
+		kuberneteslabelkeys.ResourceKind: "kubernetes_http_endpoint",
 	}
 
 	locals.EndpointDomainName = locals.KubernetesHttpEndpoint.Metadata.Name
