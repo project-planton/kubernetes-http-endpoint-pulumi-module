@@ -1,7 +1,7 @@
 package pkg
 
 import (
-	kuberneteshttpendpointv1 "buf.build/gen/go/plantoncloud/project-planton/protocolbuffers/go/project/planton/apis/provider/kubernetes/kuberneteshttpendpoint/v1"
+	kuberneteshttpendpointv1 "buf.build/gen/go/plantoncloud/project-planton/protocolbuffers/go/project/planton/provider/kubernetes/kuberneteshttpendpoint/v1"
 	"fmt"
 	"github.com/plantoncloud/kubernetes-http-endpoint-pulumi-module/pkg/outputs"
 	"github.com/plantoncloud/pulumi-module-golang-commons/pkg/provider/kubernetes/kuberneteslabelkeys"
