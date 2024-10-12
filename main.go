@@ -1,10 +1,10 @@
 package main
 
 import (
-	kuberneteshttpendpointv1 "buf.build/gen/go/plantoncloud/project-planton/protocolbuffers/go/project/planton/provider/kubernetes/kuberneteshttpendpoint/v1"
+	kuberneteshttpendpointv1 "buf.build/gen/go/project-planton/apis/protocolbuffers/go/project/planton/provider/kubernetes/kuberneteshttpendpoint/v1"
 	"github.com/pkg/errors"
-	"github.com/plantoncloud/kubernetes-http-endpoint-pulumi-module/pkg"
-	"github.com/plantoncloud/pulumi-module-golang-commons/pkg/stackinput"
+	"github.com/project-planton/kubernetes-http-endpoint-pulumi-module/pkg"
+	"github.com/project-planton/pulumi-module-golang-commons/pkg/stackinput"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 

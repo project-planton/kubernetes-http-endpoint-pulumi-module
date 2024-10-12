@@ -1,11 +1,11 @@
 package pkg
 
 import (
-	kuberneteshttpendpointv1 "buf.build/gen/go/plantoncloud/project-planton/protocolbuffers/go/project/planton/provider/kubernetes/kuberneteshttpendpoint/v1"
+	kuberneteshttpendpointv1 "buf.build/gen/go/project-planton/apis/protocolbuffers/go/project/planton/provider/kubernetes/kuberneteshttpendpoint/v1"
 	"github.com/pkg/errors"
-	certmanagerv1 "github.com/plantoncloud/kubernetes-crd-pulumi-types/pkg/certmanager/certmanager/v1"
-	gatewayv1 "github.com/plantoncloud/kubernetes-crd-pulumi-types/pkg/gatewayapis/gateway/v1"
-	"github.com/plantoncloud/pulumi-module-golang-commons/pkg/provider/kubernetes/pulumikubernetesprovider"
+	certmanagerv1 "github.com/project-planton/kubernetes-crd-pulumi-types/pkg/certmanager/kubernetes/cert_manager/v1"
+	gatewayv1 "github.com/project-planton/kubernetes-crd-pulumi-types/pkg/gatewayapis/kubernetes/gateway/v1"
+	"github.com/project-planton/pulumi-module-golang-commons/pkg/provider/kubernetes/pulumikubernetesprovider"
 	metav1 "github.com/pulumi/pulumi-kubernetes/sdk/v4/go/kubernetes/meta/v1"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
@@ -90,10 +90,10 @@ func Resources(ctx *pulumi.Context, stackInput *kuberneteshttpendpointv1.Kuberne
 			},
 			Spec: gatewayv1.GatewaySpecArgs{
 				GatewayClassName: pulumi.String(vars.GatewayIngressClassName),
-				Addresses: pulumi.Array{
-					pulumi.Map{
-						"type":  pulumi.String("Hostname"),
-						"value": pulumi.String(vars.GatewayExternalLoadBalancerServiceHostname),
+				Addresses: gatewayv1.GatewaySpecAddressesArray{
+					gatewayv1.GatewaySpecAddressesArgs{
+						Type:  pulumi.String("Hostname"),
+						Value: pulumi.String(vars.GatewayExternalLoadBalancerServiceHostname),
 					},
 				},
 				Listeners: listenersArray,
