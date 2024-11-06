@@ -23,8 +23,8 @@ func initializeLocals(ctx *pulumi.Context, stackInput *kuberneteshttpendpointv1.
 	locals.KubernetesHttpEndpoint = stackInput.Target
 
 	locals.Labels = map[string]string{
-		kuberneteslabelkeys.Environment:  stackInput.Target.Spec.EnvironmentInfo.EnvId,
-		kuberneteslabelkeys.Organization: stackInput.Target.Spec.EnvironmentInfo.OrgId,
+		kuberneteslabelkeys.Environment:  stackInput.Target.Metadata.Env.Id,
+		kuberneteslabelkeys.Organization: stackInput.Target.Metadata.Org,
 		kuberneteslabelkeys.Resource:     strconv.FormatBool(true),
 		kuberneteslabelkeys.ResourceId:   stackInput.Target.Metadata.Id,
 		kuberneteslabelkeys.ResourceKind: "kubernetes_http_endpoint",
