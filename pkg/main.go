@@ -1,11 +1,11 @@
 package pkg
 
 import (
-	kuberneteshttpendpointv1 "buf.build/gen/go/project-planton/apis/protocolbuffers/go/project/planton/provider/kubernetes/kuberneteshttpendpoint/v1"
 	"github.com/pkg/errors"
 	certmanagerv1 "github.com/project-planton/kubernetes-crd-pulumi-types/pkg/certmanager/kubernetes/cert_manager/v1"
 	gatewayv1 "github.com/project-planton/kubernetes-crd-pulumi-types/pkg/gatewayapis/kubernetes/gateway/v1"
-	"github.com/project-planton/pulumi-module-golang-commons/pkg/provider/kubernetes/pulumikubernetesprovider"
+	kuberneteshttpendpointv1 "github.com/project-planton/project-planton/apis/go/project/planton/provider/kubernetes/kuberneteshttpendpoint/v1"
+	"github.com/project-planton/project-planton/pkg/pulmod/provider/kubernetes/pulumikubernetesprovider"
 	metav1 "github.com/pulumi/pulumi-kubernetes/sdk/v4/go/kubernetes/meta/v1"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
