@@ -7,7 +7,7 @@ go 1.23.1
 require (
 	github.com/pkg/errors v0.9.1
 	github.com/project-planton/kubernetes-crd-pulumi-types v0.0.0-20241012102626-a7bf231cb216
-	github.com/project-planton/project-planton v0.0.23
+	github.com/project-planton/project-planton v0.0.30
 	github.com/pulumi/pulumi-kubernetes/sdk/v4 v4.18.3
 	github.com/pulumi/pulumi/sdk/v3 v3.138.0
 )
